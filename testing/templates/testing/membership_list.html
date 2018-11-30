@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<section id="price-page" class="section-padding" style="background-image: url('{% static "images/section-bg-3.png" %}'); background-position: center center;">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 text-center">
+                    <div class="page-title">
+                        <h4 class="heading-4 title text-white"> Pricing</h4>
+                        <p>Begin your 30 days free trial today</p>
+                    </div>
+                 
+                </div>
+            </div>
+
+<div class="container">
+	 <div class="row">
+  				{% for object in object_list|slice:":1" %}
+                </div>
+                <div class="col-xs-12 col-sm-12">
+                    <div class="price-box">
+                        <h5 class="title">Pricing</h5>
+                     
+                        <div class="price-rate">$10</div>
+                        <div class="price-time">Per Month</div>
+                        <div class="price-content">
+                            <ul>
+                                <li>Secure File Transfers</li>
+                                <li>Unlimited Users and Clients</li>
+                                <li>Speadsheet Export</li>
+                         
+                            </ul>
+                        </div>
+                        {% if object.membership_type != 'Free' %}
+						<form method="POST" action="{% url 'select' %}">
+						{% csrf_token %}
+						{% if object.membership_type != current_membership %}
+						<button class="bttn-3">Start My Trial</button>
+						{% else %}
+						 <small> You are already a member</small>
+						{% endif %}
+						<input type="hidden" name="membership_type" value="{{object.membership_type }}">
+						</form>
+						{% endif %}
+
+						</div>
+
+                      <!--   <a href="{% url 'auditor_signup' %}" class="bttn-3">Start My Trial</a> -->
+                        {% endfor %}
+                    </div>
+
+<!-- 
+
+	<div class="row">
+	{% for object in object_list %}
+	<div class="col-sm-4 col-md-4">
+
+	<h2>{{ object.membership_type }}</h2>
+
+	<p>Price: ${{ object.monthly_price }}<small>/month</small></p>
+
+	{% if object.membership_type != 'Free' %}
+	<form method="POST" action="{% url 'select' %}">
+		{% csrf_token %}
+		{% if object.membership_type != current_membership %}
+		<button class="btn btn-warning">Select</button>
+		{% else %}
+		 <small> This is your current memebership</small>
+		{% endif %}
+		<input type="hidden" name="membership_type" value="{{object.membership_type }}">
+	</form>
+	{% endif %}
+
+</div>
+
+	{% endfor %}
+
+</div>
+</div>
+ -->
+
+{% endblock %}

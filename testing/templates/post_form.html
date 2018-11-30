@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1>Supportings and Remarks</h1>
+
+
+<div class='col-sm-6 col-sm-offset-3'>
+	
+
+	{% if instance.attachment %}
+	<embed src='{{ instance.attachment.url }}' width="575" height="500" />
+	{% endif %}
+
+<form method="POST" enctype="multipart/form-data" action=''>{% csrf_token %}
+{{ form.as_p }}
+
+<input type='submit' value = 'Submit' />
+
+
+</form>
+
+{% endblock content %}

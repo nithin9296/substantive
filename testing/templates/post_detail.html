@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+
+
+<div class='col-sm-6 col-sm-offset-3'>
+
+	{% if instance.image %}
+	<img src='{{ instance.image.url }}' class='img-responsive' />
+	{% endif %}
+<!-- 
+<h1> {{ title }}</h1>
+
+{{ instance.question_text }} <br/>
+{{ instance.pub_date }} <br/>
+{{ instance.slug }} <br/>
+ -->
+
+        <tr>
+          <td>{{ instance.transaction_GlCode }}</td>
+          <td>{{ instance.transaction_Gldescription }}</td>
+          <td>{{ instance.transaction_date }}</td>
+          <td>{{ instance.transaction_number }}</td>
+          <td>{{ instance.transaction_value }}</td>
+          <td>{{ instance.remarks }}</td>
+
+   
+
+</tr>
+{% endblock content %}

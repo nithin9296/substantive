@@ -1,0 +1,48 @@
+
+
+
+
+<form method="post" action="{% url 'samples_update' form.instance.pk %}" class="js-samples-update-form">
+  {% csrf_token %}
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">Update Sample</h4>
+  </div>
+  <div class="modal-body">
+    {% include 'includes/partial_samples_form.html' %}
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary">Update Sample</button>
+  </div>
+</form>
+
+<!-- 
+  {% for obj in object_list %}
+        <tr>
+          <td>{{ obj.transaction_GlCode }}</td>
+          <td>{{ obj.transaction_Gldescription }}</td>
+          <td>{{ obj.transaction_date }}</td>
+          <td>{{ obj.transaction_number }}</td>
+          <td>{{ obj.transaction_value }}</td>
+          <td>{{ obj.remarks }}</td>
+          <td>
+            <button type="button"
+                    class="btn btn-warning btn-sm js-update-samples"
+                    data-url="{% url 'samples_update' id=obj.id %}">
+                  <span class="glyphicon glyphicon-pencil"></span> Edit
+            </button>
+          </td>
+ -->
+         <!--  <td>{{ book.get_book_type_display }}</td>
+          <td>{{ book.publication_date }}</td>
+          <td>{{ book.pages }}</td>
+          <td>{{ book.price }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="7" class="text-center bg-warning">No book</td>
+        </tr>
+      {% endfor %} -->

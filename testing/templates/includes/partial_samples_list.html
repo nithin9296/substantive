@@ -1,0 +1,23 @@
+{% for obj in filter.qs %}
+        <tr>
+          <td>{{ obj.transaction_GlCode }}</td>
+          <td>{{ obj.transaction_Gldescription }}</td>
+          <td>{{ obj.transaction_date }}</td>
+          <td>{{ obj.transaction_number }}</td>
+          <td>{{ obj.transaction_value }}</td>
+          <td>{{ obj.remarks }}</td>
+          <td>{{ obj.action }}</td>
+          <td>{{ obj.Edit }}</td>
+          <td style="width: 150px">
+            <button type="button"
+                    class="btn btn-warning btn-sm js-update-sample"
+                    data-url="{% url 'samples_update' obj.id %}">
+                  <span class="glyphicon glyphicon-pencil"></span> Edit
+            </button>
+          </td>
+        </tr>
+{% empty %}
+  <!-- <tr>
+    <td colspan="8" class="text-center bg-warning">No book</td>
+  </tr> -->
+{% endfor %}

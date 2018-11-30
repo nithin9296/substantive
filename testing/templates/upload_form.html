@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>{{header}}</h1>
+
+   
+     <p> - Download the upload file format - <a href="{% url 'download' %}"> Sample Format </a> </p>
+     <p> - Copy and paste the date in the excel file </p>
+     <p> - Upload the excel file </p>
+
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+    <form action="" enctype="multipart/form-data"  method="POST">
+        <table>
+            {{ form.as_table }}
+        </table>
+        {% csrf_token %}
+        <input type="submit"  class="btn btn-primary"> 
+    </form>
+</body>
+{% endblock content %}
