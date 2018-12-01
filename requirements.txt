@@ -154,7 +154,7 @@ path.py==11.0.1
 pathlib2==2.3.2
 patsy==0.5.0
 pbr==5.1.1
-pdftotext==2.1.0
+
 peewee==3.7.0
 pefile==2018.8.8
 pep8==1.7.1
