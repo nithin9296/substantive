@@ -5,7 +5,7 @@ anaconda-client==1.2.2
 
 aniso8601==3.0.2
 appnope==0.1.0
-appscript==1.0.1
+
 asn1crypto==0.24.0
 astroid==1.6.3
 astropy==3.0.2
@@ -188,7 +188,7 @@ Pygments==2.2.0
 PyInstaller==3.3.1
 pylint==1.8.4
 PyMsgBox==1.0.6
-
+x
 
 pyodbc==4.0.23
 pyOpenSSL==18.0.0
