@@ -30,12 +30,15 @@ ALLOWED_HOSTS = []
 FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
                         "django_excel.TemporaryExcelFileUploadHandler")
 
+
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'shrotaapp@gmail.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-EMAIL_PORT = 1025
+EMAIL_HOST_USER = 'shrotaapp@gmail.com'
+EMAIL_HOST_PASSWORD = 'motorokr240377'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+
 
 # Application definition
 
