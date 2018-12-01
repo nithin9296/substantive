@@ -24,6 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '(ssx)+*u-wqmn+64@byd!tv)(lf^lzn0mn4@k
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+import dj_database_url
 
 ALLOWED_HOSTS = ['substantive.herokuapp.com', '.theshrota.com']
 
