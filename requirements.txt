@@ -190,7 +190,7 @@ pylint==1.8.4
 PyMsgBox==1.0.6
 
 
-pyodbc==4.0.23
+
 pyOpenSSL==18.0.0
 pyparsing==2.2.0
 PyScreeze==0.1.18
