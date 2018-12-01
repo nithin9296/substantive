@@ -58,7 +58,7 @@ django-hitcount==1.3.0
 django-import-export==1.1.0
 django-markdown-app==0.9.4.1
 django-material==1.3.0
-django-qa==0.10.1.1
+django-qa==0.10.0
 django-taggit==0.22.2
 django-viewflow==1.3.0
 django-widget-tweaks==1.4.3
