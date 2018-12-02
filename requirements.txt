@@ -100,7 +100,9 @@ rope==0.10.7
 scipy==1.1.0
 
 six==1.11.0
-boto boto3 django-storages
+boto==2.48.0
+boto3==1.9.57
+django-storages==1.7.1
 
 SQLAlchemy==1.2.7
 
