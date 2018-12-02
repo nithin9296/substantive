@@ -100,6 +100,7 @@ rope==0.10.7
 scipy==1.1.0
 
 six==1.11.0
+storages
 
 SQLAlchemy==1.2.7
 
