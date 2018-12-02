@@ -10,8 +10,8 @@ STATICFILES_STORAGE = 'substantive.aws.utils.StaticRootS3BotoStorage'
 AWS_STORAGE_BUCKET_NAME = 'substantive-bucket'
 S3DIRECT_REGION = 'ap-south-1'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_	_NAME
-MEDIA_ROOT = MEDIA_URL
+# MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_	_NAME
+# MEDIA_ROOT = MEDIA_URL
 STATIC_URL = S3_URL + 'static/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
