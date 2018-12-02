@@ -27,6 +27,7 @@ from django.conf.urls.static import static
 from testing.views import SignUpView, ClientSignUpView, AuditorSignUpView
 
 urlpatterns = [
+    url(r'^$', include('testing.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^testing/', include('testing.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
