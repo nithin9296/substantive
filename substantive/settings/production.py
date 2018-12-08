@@ -32,15 +32,17 @@ ALLOWED_HOSTS = ['substantive.herokuapp.com', '.theshrota.com']
 FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
                         "django_excel.TemporaryExcelFileUploadHandler")
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'shrotaapp@gmail.com'
-EMAIL_HOST_USER = 'shrotaapp@gmail.com'
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_HOST_USER = 'nithin9196'
+EMAIL_HOST_PASSWORD = 'motorokr240377'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 
 # Application definition
+SITE_ID = 1
+
 
 INSTALLED_APPS = [
     'django.contrib.auth',
@@ -49,6 +51,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
+    'django_comments',
+    'mptt',
+    'tagging',
     'import_export',
     'testing',
     'crispy_forms',
@@ -56,8 +63,11 @@ INSTALLED_APPS = [
     "djstripe",
     "stripe",
     "storages",
+    "zinnia",
+    'bootstrapform',
+    'survey',
     
-  
+
 ]
 
 import stripe
@@ -90,6 +100,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
+                'zinnia.context_processors.version',
             ],
         },
     },

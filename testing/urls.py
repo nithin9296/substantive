@@ -1,14 +1,22 @@
 from django.conf.urls import url, include
 from testing import views
+from testing.sitemaps import samplesSitemap
+from django.contrib.sitemaps.views import sitemap
 
-
+sitemaps = {
+    'samples': samplesSitemap
+}
 urlpatterns = [
     # url(r'^$', views.ca_import, name='uplink'),
     # url(r'^posts$', views.post_list, name='posts'),
     url(r'^$', views.home, name='home'),
     url(r'^search/$', views.search, name='search'),
+    url(r'^sitemap\.xml/$', sitemap, {'sitemaps': sitemaps } , name='sitemap'),
+    url(r'^survey/', include('survey.urls')),
     
     url(r'^question_list/', views.question_list, name='question_list'),
+    url(r'^helpusgrow/', views.helpusgrow, name='helpusgrow'),
+    url(r'^challenge/', views.challenge, name='challenge'),
     url(r'^client_list/', views.client_list, name='client_list'),
     # url(r'^create$', views.post_create, name='create'),
     # url(r'^posts/(?P<id>\d+)/$', views.post_detail, name='detail'),
@@ -18,8 +26,8 @@ urlpatterns = [
     url(r'^(?P<id>\d+)/edit/$', views.client_update, name='client_update'),
     # url(r'^(?P<id>\d+)/update/$', views.question_update, name='question_update'),
     # url(r'^(?P<id>\d+)/review/$', views.question_review, name='question_review'),
-
     url(r'^import_data/', views.import_data, name="import_data"),
+    # url(r'^survey/', views.survey, name="survey"),
     url(r'^downloadreport/', views.downloadreport, name="downloadreport"),
     url(r'^download/', views.download, name="download"),
     # url(r'^checkout/', views.CheckoutView.as_view(), name="checkoutview"),

@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, render_to_response
 import re
 import xlrd
-from .forms import PostForm, AuditorSignUpForm, ClientSignUpForm, SamplesForm, ClientForm, AuditorForm, ContactForm
+from .forms import PostForm, AuditorSignUpForm, ClientSignUpForm, SamplesForm, ClientForm, AuditorForm, ContactForm, BooleanAnswerForm, TextAnswerForm, ChoiceAnswerForm 
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView, TemplateView)
 from django.contrib.auth import login
@@ -21,7 +21,7 @@ from django.http import HttpResponseBadRequest, HttpResponse
 from django import forms
 from import_export import resources
 import django_excel as excel
-from testing.models import Question, samples, User, ObjectViewed, Membership, UserMembership, Subscription
+from testing.models import Question, samples, User, ObjectViewed, Membership, UserMembership, Subscription, Question1
 from .decorators import client_required, auditor_required
 
 data = [
@@ -99,7 +99,7 @@ class AuditorSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('select')
+        return redirect('import_data')
 
 
 @auditor_required
@@ -519,6 +519,7 @@ def email(request):
             name = form.cleaned_data['name']
             from_email = form.cleaned_data['email']
             message = form.cleaned_data['message']
+            print(name)
             try:
                 send_mail(name, message, from_email, ['shrotaapp@gmail.com'])
             except BadHeaderError:
@@ -780,4 +781,37 @@ def cancelSubscription(request):
     return redirect('/testing')
 
 
+def helpusgrow(request):
 
+    return render(request, 'helpusgrow.html')
+
+def challenge(request):
+
+    return render(request, 'challenge.html')
+
+
+# def survey(request):
+    
+#     questions = Question1.objects.all() 
+#     if request.method == 'POST': # If the form has been submitted...
+#         print (request.POST)
+
+#         for q in questions :
+#             try:
+#                 data ={ u'%s-answer'%q.id: request.POST[u'%s-answer'%q.id]}
+#             except:
+#                 data = { u'%s-answer'%q.id: None}
+#             q.form = q.answer_type.model_class().form(prefix="%s"%q.id, data=data) 
+#             q.save()
+#     else:
+#         for q in questions :
+#             q.form = q.answer_type.model_class().form(prefix="%s"%q.id) 
+           
+            
+#     context = {
+#                 "questions": questions,
+               
+#                         }
+
+
+#     return render(request, 'survey.html', context)  

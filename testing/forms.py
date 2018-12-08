@@ -1,5 +1,5 @@
 from django import forms
-from .models import Question, samples, User
+from .models import Question, samples, User, Question1, ChoiceAnswer, BooleanAnswer, TextAnswer
 
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
@@ -99,10 +99,40 @@ class ContactForm(forms.Form):
 
     name = forms.CharField(required=True)
     email = forms.EmailField(required=True)
-    phone = forms.CharField(required=False)
-    website = forms.CharField(required=True)
+    # phone = forms.CharField(required=False)
+    # website = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea)
 
 
+# class ContactForm(forms.Form):
+
+#     name = forms.CharField(required=True)
+#     email = forms.EmailField(required=True)
+#     phone = forms.CharField(required=False)
+    
+#     message = forms.CharField(widget=forms.Textarea)
+
+
+class ChoiceAnswerForm(forms.ModelForm):
+    class Meta:
+        model = ChoiceAnswer
+        exclude=("question1",)
+
+ChoiceAnswer.form = ChoiceAnswerForm
+
+
+
+
+class BooleanAnswerForm(forms.ModelForm):
+    class Meta:
+        model = BooleanAnswer
+        exclude=("question1",)
+BooleanAnswer.form= BooleanAnswerForm
+
+class TextAnswerForm(forms.ModelForm):
+    class Meta:
+        model = TextAnswer
+        exclude=("question1",)
+TextAnswer.form = TextAnswerForm
 
 

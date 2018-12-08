@@ -33,6 +33,7 @@ class Question(models.Model):
     	# return "posts/%s/" %(self.id)
 
 
+
 # class Choice(models.Model):
 #     question = models.ForeignKey(Question, on_delete=models.CASCADE)
 #     choice_text = models.CharField(max_length=200)
@@ -251,3 +252,38 @@ class DatasetModel(models.Model):
     timestamp           = models.DateTimeField(auto_now_add=True)
 
 
+
+CHOICES=((1,'exactly true'),(2,'mostly true'),(3,'mostly untrue'),(4,'untrue'),(5,'I don\'t know '))
+
+class Answer(models.Model):
+    question1 = models.ForeignKey("Question1", on_delete=models.CASCADE)
+    
+
+class ChoiceAnswer(Answer):
+    answer = models.IntegerField(max_length=1, choices=CHOICES)
+    
+    def __unicode__(self):
+        return u'%s: %s'%(self.question1, self.answer)
+
+class TextAnswer(Answer):
+    answer= models.TextField()
+
+
+    def __unicode__(self):
+        return u'%s: %s'%(self.question1, self.answer)
+
+
+class BooleanAnswer(Answer):
+    answer= models.BooleanField(choices=((True,'yes'),(False,'no')))
+
+    def __unicode__(self):
+        return u'%s: %s'%(self.question1, self.answer)
+
+
+class Question1(models.Model):
+    question1 = models.CharField(max_length=255)
+    answer_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+
+
+    def __unicode__(self):
+        return u'%s'%self.question

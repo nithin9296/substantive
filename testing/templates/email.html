@@ -14,47 +14,25 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <form class="contactform" method="POST">
-
-                        <!-- {{ form.as_p }} -->
-                        {% csrf_token %}
-                        <div class="col-xs-12 col-md-4">
-                            <div class="input-box">
-                                <label for="name">Your Name *</label>
-                                <input type="text" name="name"  class="form-input">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-4">
-                            <div class="input-box">
-                                <label for="email">Your Email *</label>
-                                <input type="text" name="email"  class="form-input">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-4">
-                            <div class="input-box">
-                                <label for="phone">Phone</label>
-                                <input type="text" name="phone" class="form-input">
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                            <div class="input-box">
-                                <label for="website">Website</label>
-                                <input type="text"  name="website" class="form-input">
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                            <div class="input-box">
-                                <label for="message">Message *</label>
-                                <textarea name="message"  cols="30" rows="5" class="form-input"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                           <button class="bttn-3" type="submit">Submit<i class="fa fa-paper-plane"></i></button>
-                        </div>
-                    </form>
-                </div>
+                    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button type="submit">Send</button>
+    </div>
+</form>
             </div>
-        </div>
+             </div>
     </section>
+
+    <!-- templates/email.html -->
+<!-- <h1>Contact Us</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button type="submit">Send</button>
+    </div>
+</form> -->
 
 {% endblock %}
