@@ -422,7 +422,7 @@ def download(request):
     excel_file = IO()
 
     xlwriter = pd.ExcelWriter(excel_file, engine='openpyxl')
-    result.to_excel(xlwriter, 'sheetname')
+    result.to_excel(xlwriter, 'samples')
     xlwriter.save()
     xlwriter.close()
     excel_file.seek(0)

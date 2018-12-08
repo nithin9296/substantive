@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('zinnia.urls', namespace='zinnia'), name='blog'),
     
+    
     url(r'^comments/', include('django_comments.urls')),
     url(r'^google73c9cb963d09efaf\.html$', lambda r: HttpResponse("google-site-verification: google73c9cb963d09efaf.html", mimetype="text/plain")),
     
