@@ -2,7 +2,6 @@
 boto==2.48.0
 boto3==1.9.57
 botocore==1.12.57
-datashape==0.5.4
 datefinder==0.6.1
 dateparser==0.7.0
 decorator==4.3.0
