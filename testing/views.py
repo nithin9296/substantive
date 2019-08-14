@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, render_to_response
 import re
 import xlrd
-from .forms import PostForm, AuditorSignUpForm, ClientSignUpForm, SamplesForm, ClientForm, AuditorForm, ContactForm, BooleanAnswerForm, TextAnswerForm, ChoiceAnswerForm 
+from .forms import PostForm,  SamplesForm, ClientForm, AuditorForm, ContactForm, BooleanAnswerForm, TextAnswerForm, ChoiceAnswerForm 
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView, TemplateView)
 from django.contrib.auth import login
@@ -21,14 +21,14 @@ from django.http import HttpResponseBadRequest, HttpResponse
 from django import forms
 from import_export import resources
 import django_excel as excel
-from testing.models import Question, samples, User, ObjectViewed, Membership, UserMembership, Subscription, Question1
+from testing.models import Question, samples, ObjectViewed, Membership, UserMembership, Subscription, Question1
 from .decorators import client_required, auditor_required
 
 data = [
     [1, 2, 3],
     [4, 5, 6]
 ]
-
+  
 
 def profile_view(request):
 
@@ -45,61 +45,61 @@ def profile_view(request):
 
     return render(request, "testing/profile.html", context)
 
-class SignUpView(CreateView):
-    model = User
-    form_class = AuditorSignUpForm
-    template_name = 'signup_form.html'
+# class SignUpView(CreateView):
+#     model = User
+#     form_class = AuditorSignUpForm
+#     template_name = 'signup_form.html'
 
-    def get_context_data(self, **kwargs):
-        kwargs['user_type'] = 'auditor'
-        return super().get_context_data(**kwargs)
+#     def get_context_data(self, **kwargs):
+#         kwargs['user_type'] = 'auditor'
+#         return super().get_context_data(**kwargs)
 
-    def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
-        return redirect('select')
+#     def form_valid(self, form):
+#         user = form.save()
+#         login(self.request, user)
+#         return redirect('select')
 
 
 
 def home(request):
-    if request.user.is_authenticated:
-        if request.user.is_auditor:
-            return redirect('question_list')
-        else:
-            return redirect('client_list')
+    # if request.user.is_authenticated:
+    #     if request.user.is_auditor:
+    #         return redirect('question_list')
+    #     else:
+    #         return redirect('client_list')
     return render(request, 'home.html')
 
 
 
 
-class ClientSignUpView(CreateView):
-    model = User
-    form_class = ClientSignUpForm
-    template_name = 'client_profile.html'
+# class ClientSignUpView(CreateView):
+#     model = User
+#     form_class = ClientSignUpForm
+#     template_name = 'client_profile.html'
 
-    def get_context_data(self, **kwargs):
-        kwargs['user_type'] = 'client'
-        return super().get_context_data(**kwargs)
+#     def get_context_data(self, **kwargs):
+#         kwargs['user_type'] = 'client'
+#         return super().get_context_data(**kwargs)
 
-    def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
-        return redirect('client_list')
+#     def form_valid(self, form):
+#         user = form.save()
+#         login(self.request, user)
+#         return redirect('client_list')
 
 
-class AuditorSignUpView(CreateView):
-    model = User
-    form_class = AuditorSignUpForm
-    template_name = 'signup_form.html'
+# class AuditorSignUpView(CreateView):
+#     model = User
+#     form_class = AuditorSignUpForm
+#     template_name = 'signup_form.html'
 
-    def get_context_data(self, **kwargs):
-        kwargs['user_type'] = 'auditor'
-        return super().get_context_data(**kwargs)
+#     def get_context_data(self, **kwargs):
+#         kwargs['user_type'] = 'auditor'
+#         return super().get_context_data(**kwargs)
 
-    def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
-        return redirect('import_data')
+#     def form_valid(self, form):
+#         user = form.save()
+#         login(self.request, user)
+#         return redirect('import_data')
 
 
 @auditor_required

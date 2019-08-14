@@ -1,5 +1,5 @@
 from django import forms
-from .models import Question, samples, User, Question1, ChoiceAnswer, BooleanAnswer, TextAnswer
+from .models import Question, samples,Question1, ChoiceAnswer, BooleanAnswer, TextAnswer
 
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
@@ -18,31 +18,31 @@ class PostForm(forms.ModelForm):
 
 
 
-class AuditorSignUpForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
-        model = User
+# class AuditorSignUpForm(UserCreationForm):
+#     class Meta(UserCreationForm.Meta):
+#         model = User
 
-    def save(self, commit=True):
-        user = super().save(commit=False)
-        user.is_auditor = True
-        if commit:
-            user.save()
-        return user
+#     def save(self, commit=True):
+#         user = super().save(commit=False)
+#         user.is_auditor = True
+#         if commit:
+#             user.save()
+#         return user
 
 
-class ClientSignUpForm(UserCreationForm):
-	Client = forms.CharField(required=True)
-	class Meta(UserCreationForm.Meta):
-		model = User
-		fields =["Client", 'username', 'password1', 'password2']
+# class ClientSignUpForm(UserCreationForm):
+# 	Client = forms.CharField(required=True)
+# 	class Meta(UserCreationForm.Meta):
+# 		model = User
+# 		fields =["Client", 'username', 'password1', 'password2']
 
-	@transaction.atomic
-	def save(self, commit=True):	
-		user = super().save(commit=False)
-		user.is_client = True
-		if commit:
-			user.save()
-		return user
+# 	@transaction.atomic
+# 	def save(self, commit=True):	
+# 		user = super().save(commit=False)
+# 		user.is_client = True
+# 		if commit:
+# 			user.save()
+# 		return user
 
 
 class SamplesForm(forms.Form):

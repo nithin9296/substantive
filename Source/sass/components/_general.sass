@@ -1,0 +1,219 @@
+.logo
+    color: #ffffff
+    font-size: 36px
+    text-transform: uppercase
+    padding: 20px 
+    align-self: flex-start
+    margin-bottom: auto
+
+.general
+
+    &_title
+        color: #ffffff
+        font-size: 18px
+        text-transform: uppercase
+        margin-bottom: 50px
+
+    &_btn
+        display: block
+        cursor: pointer
+        background: transparent
+        overflow: hidden
+        padding: 12px 0px
+        box-shadow: 0px 0px 1px 1px #ffffff
+        color: #ffffff
+        position: relative
+        transition: 0.3s
+        max-width: 130px
+        width: 100%
+        @media screen and (min-width: #{$dw-640})
+            max-width: 180px
+        &:hover
+            box-shadow: none!important
+            span
+                &:nth-child(1)
+                    animation: 1.5s btn_hover_1 infinite
+                &:nth-child(2)
+                    animation: 1.5s btn_hover_2 infinite
+                    animation-delay: 1s
+                &:nth-child(3)
+                    animation: 1.5s btn_hover_3 infinite
+                    animation-delay: 0.6s
+                &:nth-child(4)
+                    animation: 1.5s btn_hover_4 infinite
+                    animation-delay: 0.3s
+        span
+            position: absolute
+            background: #ffffff
+            display: block
+            &:nth-child(2n+1)
+                width: 100%
+                height: 1px
+            &:nth-child(2n)
+                height: 100%
+                width: 1px
+            &:nth-child(1)
+                top: 0
+                left: -100%
+            &:nth-child(2)
+                top: 100%
+                left: 0
+            &:nth-child(3)
+                bottom: 0
+                right: -100%
+            &:nth-child(4)
+                right: 0
+                top: -100% 
+
+    &_form
+        position: relative
+        z-index: 2
+        min-width: 320px
+        padding: 20px
+        display: flex
+        align-items: center
+        flex-direction: column
+        transition: 0.2s 0s
+        @media screen and (min-height: 740px)
+            justify-content: center
+        form
+            width: 100%
+            margin-bottom: auto
+            @media screen and (min-width: #{$dw-640})
+                width: 80%
+        .input_box
+            position: relative
+            height: 70px
+            margin-bottom: 50px
+            &:before, &:after
+                content: ''
+                position: absolute
+                top: 0
+                width: calc(50% - 50px)
+                height: 100%
+                border-top: 1px solid #ffffff
+                border-bottom: 1px solid #ffffff
+                transition: 0.3s
+            &:before
+                left: 0
+                border-left: 1px solid #ffffff
+            &:after
+                right: 0
+                border-right: 1px solid #ffffff
+            &.focus
+                &:before, &:after
+                    width: 50%
+                label
+                    transform: translateY(-80%)
+        .general_btn
+            margin-left: auto
+            margin-bottom: 20px
+            font-size: 16px
+            @media screen and (min-width: #{$dw-640})
+                font-size: 22px
+        label
+            color: #fff
+            position: relative
+            z-index: 1
+            padding: 10px 20px
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            transition: 0.3s
+            pointer-events: none
+        input
+            display: block
+            color: #fff
+            position: absolute
+            width: 100%
+            height: 100%
+            bottom: 0
+            left: 0
+            padding: 10px 20px
+            background: transparent
+
+    &_checkbox
+        input
+            display: none
+            position: relative
+            &:checked + label
+                &:after
+                    opacity: 1
+        label
+            padding: 0
+            position: relative
+            pointer-events: auto
+            z-index: 2
+            cursor: pointer
+            display: flex
+            align-items: center
+            &:before
+                content: ''
+                display: block
+                width: 16px
+                height: 16px
+                margin-right: 10px
+                border: 1px solid #ffffff
+            &:after
+                content: ''
+                opacity: 0
+                height: 8px
+                width: 4px
+                border-right: 1px solid #ffffff
+                border-bottom: 1px solid #ffffff
+                position: absolute
+                top: 4px
+                left: 6px
+                transition: 0.2s
+                transform: rotate(35deg)
+    
+    &_social-links
+        a
+            display: inline-block
+            margin: 0px 10px
+            font-size: 28px
+            color: #ffffff
+            i
+                transition: 0.2s
+            &:hover
+                .fa
+                    &-facebook
+                        color: #6080c4
+                    &-twitter-square
+                        color: #27a4dc
+                    &-instagram
+                        color: #d9205e
+                    &-linkedin
+                        color: #2693c9
+
+    &_dropdown-list
+        border: 1px solid #ffffff
+        border-radius: 10px
+        max-width: 280px
+        width: 100%
+        padding: 12px 20px
+        color: #ffffff
+        line-height: 28px
+        span
+            cursor: pointer
+            display: flex
+            align-items: center
+            justify-content: space-between
+            &:after
+                content: ''
+                border-right: 6px solid transparent
+                border-left: 6px solid transparent
+                border-top: 8px solid #ffffff
+                border-bottom: 0px solid transparent
+                transition: 0.2s
+            &.show
+                &:after
+                    border-top: 0px solid transparent
+                    border-bottom: 8px solid #ffffff
+        ul
+            overflow: hidden
+            display: none
+            li
+                cursor: pointer
+

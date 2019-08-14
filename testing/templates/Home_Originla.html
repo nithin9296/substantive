@@ -1,0 +1,315 @@
+
+{% load static %}
+
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Ashekur Rahman">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Shrota | Audit</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="shortcut icon" type="image/ico" href="{% static 'images/favicon.ico' %}" />
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130443205-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-130443205-1');
+</script>
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+{% block nav %}
+<body data-spy="scroll" data-target=".mainmenu-area">
+    <!-- Prealoader-->
+    <div class="preloader">
+        <div class="waves-block">
+           <div class="icon">
+               <i class="fa fa-hourglass-half" ></i>
+           </div>
+            <div class="waves wave-1"></div>
+            <div class="waves wave-2"></div>
+            <div class="waves wave-3"></div>
+        </div>
+    </div>
+    <nav class="navbar mainmenu-area" data-spy="affix" data-offset-top="200">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainmenu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              
+            </div>
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <div class="navbar-header navbar-right hidden visible-lg padding-left-50">
+                    <a href="{% url 'login' %}" class="bttn-1">Sign In</a>
+                </div>
+                 <div class="navbar-header navbar-right hidden visible-lg padding-left-50">
+                    <a href="{% url 'auditor_signup' %}" class="bttn-1">Sign Up</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#service-page"></a></li>
+                    <li><a href="{% url 'auditor_signup' %}">Pricing</a></li>
+                    <li><a href="{% url 'email' %}">Contact</a></li>
+                    <li><a href="{% url 'zinnia:entry_archive_index' %}">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
+    <!-- Header-Area -->
+    <header class="header-area text-white xs-center v4" style="background-image:url('{% static "images/header-bg.png" %}'); background-position: center top; background-size: 100% 100%;" id="home-page">
+        <div class="table-cell">
+            <div class="container">
+                <div class="row middle-row">
+                    <div class="col-xs-12 col-md-5">
+                        <h2 class="heading-2 text-white wow fadeInUp" data-wow-delay="0.2s">Shrota Workspace for Audit </h2>
+                  <!--       <p class="wow fadeInUp" data-wow-delay="0.5s">Shrota is a platform application designed to assist in  vouching and documentation procedures</p> -->
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">Join our prototyping journey today. Receive a gift</p>
+                        <div class="space-30"></div>
+                        <a href="{% url 'challenge' %}" class="bttn-5 wow fadeInUp" data-wow-delay="0.4s">Get Started </a>
+                        <div class="space-60 hidden visible-xs visible-sm"></div>
+                    </div>
+                    <div class="hidden-xs col-md-6 col-md-offset-1">
+                        <figure class="single-image wow fadeInUp">
+                            <img src="{% static 'images/screen.png' %}" alt="Laptop">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header-Area / -->
+   
+   
+    <!-- Service-Area -->
+    <section class="section-padding" id="service-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 wow fadeInLeft">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <img src="{% static 'images/service-icon-1.png' %}" alt="Service Icon">
+                        </div>
+                        <h4 class="title">Space for Sharing</h4>
+                        <p>Shrota acts as a central place where an auditor can share samples and the client can upload documents against selected samples.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 wow fadeInUp">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <img src="{% static 'images/service-icon-2.png' %}" alt="Service Icon">
+                        </div>
+                        <h4 class="title">Data Safety</h4>
+                        <p>Shrota security features lets you control exactly who can access client's files.If something happens to your computer, all of the files in your Shrota stay safe. </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 wow fadeInRight">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <img src="{% static 'images/service-icon-3.png' %}" alt="Service Icon">
+                        </div>
+                        <h4 class="title">Time-saving</h4>
+                        <p>Shrota makes it easy to monitor samples and examining documents agasint samples. No more wasting the day tracking down supportings with client.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service-Area / -->
+
+
+    <!-- Project-Area / -->
+
+    <!-- Project-Area -->
+
+    <!-- Project-Area / -->
+
+    
+    <!-- Feature-Area / -->
+
+    <!-- Testimonail-Area -->
+
+   
+ 
+    
+    <!-- FAQ-Area -->
+    <section class="section-padding-top" id="faq-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 text-center">
+                    <div class="page-title">
+                        <h4 class="heading-4 title">Frequently asked questions</h4>
+                       <!--  <p>Notifications keep you informed of all updates. Customize them to receive as many, or as few, as you want.</p> -->
+                    </div>
+                    <div class="space-80"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="faq-box">
+                        <h4 class="title">Which type of Audit can I use this for</h4>
+                        <p>Shrota application can be used for Financial Audits, Operational Audits, Internal Audits and Tax audits.</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="title">What are the steps</h4>
+                        <p>Singup, start membership, create client profile, upload samples and share the details to client so that he can upload supportings against samples selected.</p>
+                    </div>
+                <!--     <div class="faq-box">
+                        <h4 class="title">What are the steps</h4>
+                        <p>Singup, start membership, create client profile, upload samples and share the details to client so that he can upload supportings against samples selected</p>
+                    </div> -->
+                    <div class="faq-box">
+                        <h4 class="title">How many client profiles can I create?</h4>
+                        <p>Currently there is no limit on number of client profiles that one can create.</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="title">What is this application meant for?</h4>
+                        <p>It is an Workspace for testing samples during audit, this is the first  module out of the series of  the modules to be launched.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="faq-box">
+                        <h4 class="title">Why do I need to input my credit card for the free trial?</h4>
+                        <p>We require credit card information for the trial to prevent fraud. But if you cancel before the trial period is over, there won’t be any charges. </p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="title">Can you customise the application</h4>
+                        <p>Sure, please drop your contact information in the contact form</p>
+                    </div>
+               <!--      <div class="faq-box">
+                        <h4 class="title">If you could have any kind of pet, what would you choose?</h4>
+                        <p>We actually have an exchange nev2rk, and they have allowed us to like the posts of others.</p>
+                    </div> -->
+                    <div class="qustion-box-2">
+                        <div class="qustion-icon">
+                            <img src="{% static 'images/q-icon.png' %}" alt="">
+                        </div>
+                        <h4 class="title">Do you have any questions?</h4>
+                        <p>Would be happy to hear how I can help you out.</p>
+                        <a href="mailto:support@sasspro.com"><i class="fa fa-envelope-o" ></i> shrotapp@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--    
+    <footer class="footer-area v4" style="background-image: url('{% static "images/footer-bg.png" %}')";>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <h4 class="heading-4">Want to Get Started ?</h4>
+                    <p>Sign up for a 15-day trial. No obligations. No credit card required.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <form id="mc-form" class="subscrie-form green">
+                        <label class="mt10" for="mc-email"></label>
+                        <input type="email" class="control" id="mc-email" placeholder="Email Address">
+                        <button type="submit" class="submit">Get Started for free</button>
+                    </form>
+                </div>
+            </div>
+            <div class="space-60"></div>
+            <div class="row footer-widget-area">
+                <div class="col-xs-12 col-sm-3">
+                    <div class="widget">
+                        <img src="{% static 'images/dark-logo.png' %}" alt="">
+                        <div class="space-30"></div>
+                        <p>Even when carefully kept, paper journals can be read by anyone who happens.</p>
+                        <div class="social-menu">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                        <div class="copyright">Copyright Sasspro 2018</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <div class="widget">
+                        <h5 class="widget-title">About</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <div class="widget">
+                        <h5 class="widget-title">Solutions</h5>
+                        <ul>
+                            <li><a href="#">Marketing Teams</a></li>
+                            <li><a href="#">Creative Teams</a></li>
+                            <li><a href="#">Your Company</a></li>
+                            <li><a href="#">Enterprise</a></li>
+                            <li><a href="#">Road map</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <div class="widget">
+                        <h5 class="widget-title">Company</h5>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Customers</a></li>
+                            <li><a href="#">App</a></li>
+                            <li><a href="#">API</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </footer>
+    <!--Vendor-JS-->
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <!--Plugin-JS-->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/ajaxchimp.js' %}"></script>
+    <script src="{% static 'js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/contact-form.js' %}"></script>
+    <script src="{% static 'js/slicknav.min.js' %}"></script>
+    <script src="{% static 'js/scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!--Main-active-JS-->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+ 

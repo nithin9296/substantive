@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+<form method="POST">
+    {{ formset.management_form }}
+    <table class="table table-hover">
+      {% csrf_token %}
+      <thead>
+          <tr>
+            <th>{{ formset.form.objectives.100 }} </th>
+            <th>{{ formset.form.objectives.0 }}</th>
+             <th>{{ formset.form.objectives.1 }}</th>
+             <th>{{ formset.form.objectives.12 }}</th>
+             <th>{{ formset.form.objectives.12 }}</th>
+        </tr>
+        
+</thead>
+<tbody>
+            <tr>
+                {% for field in formset.forms %}
+
+                 <td>{{ field.mxcell }}</td> 
+                <td>{{ field.option_0 }}</td>
+                <td>{{ field.option_1 }}</td>
+                <!-- <td>{{ field.option_2 }}</td>
+                <td>{{ field.option_3 }}</td> -->
+            </tr>
+      {% endfor %}
+      <tr>
+                
+                <tr>
+                <td>Assessed Control Risk</td>
+                <td>{{ form2.assessed_cr_1}}</td>
+                <td>{{ form2.assessed_cr_0}}</td> 
+              <!-- {{form2}} -->
+
+             
+    </tbody>
+    
+    {% if formset.errors %}
+          {% for field in formset.forms %}
+              {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                    </div>
+              {% endfor %}
+            {% endfor %}
+          {% for error in formset.non_field_errors %}
+                    <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                    </div>
+        {% endfor %}
+      {% endif %}
+  </table>
+  <div class="form-actions">
+ <input type="submit" />
+ </div>
+</form>
+
+
+
+ 
+ <!-- {% for item in formset.forms %}
+  <tr >
+
+     <div class="mb-3"> -->
+     <!--  <label for="issuer">issuer</label>
+      <input type="text" class="form-control" name ="issuer" value={{item.mxcell}}> -->
+ <!-- <td> {{ item.mxcell}}</td></div>
+</div>
+<tr>
+  <td>  {{ item.option}} </td>
+  </tr> -->
+    <!-- {{ item.value}} -->
+  <!--  <tr><td> {{ item.option}}</td></tr> -->
+<!-- </tr>
+ </table>
+
+
+{% endfor %}
+
+</tr>
+</tbody> -->
+    <!-- {{ item }} -->
+
+    
+
+
+
+{% endblock %}
+
+

@@ -24,24 +24,25 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from testing.views import SignUpView, ClientSignUpView, AuditorSignUpView
+# from testing.views import SignUpView, ClientSignUpView, AuditorSignUpView
 
 urlpatterns = [
-    url(r'^$', include('testing.urls')),
+    # url(r'^$', include('testing.urls')),
+    url(r'^procedures/', include('procedures.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include('zinnia.urls', namespace='zinnia'), name='blog'),
+    # url(r'^blog/', include('zinnia.urls', namespace='zinnia'), name='blog'),
     
     
-    url(r'^comments/', include('django_comments.urls')),
-    url(r'^google73c9cb963d09efaf\.html$', lambda r: HttpResponse("google-site-verification: google73c9cb963d09efaf.html", mimetype="text/plain")),
+    # url(r'^comments/', include('django_comments.urls')),
+    # url(r'^google73c9cb963d09efaf\.html$', lambda r: HttpResponse("google-site-verification: google73c9cb963d09efaf.html", mimetype="text/plain")),
     
-    url(r'^testing/', include('testing.urls')),
-    url(r'^accounts/', include('django.contrib.auth.urls')),
+    # url(r'^testing/', include('testing.urls')),
+    # url(r'^accounts/', include('django.contrib.auth.urls')),
 
     
-    url(r'^accounts/signup/', SignUpView.as_view(), name='signup'),
-    url(r'^accounts/testing/signup/client/', ClientSignUpView.as_view(), name='client_signup'),
-    url(r'^accounts/testing/signup/auditor/', AuditorSignUpView.as_view(), name='auditor_signup'),
+    # url(r'^accounts/signup/', SignUpView.as_view(), name='signup'),
+    # url(r'^accounts/testing/signup/client/', ClientSignUpView.as_view(), name='client_signup'),
+    # url(r'^accounts/testing/signup/auditor/', AuditorSignUpView.as_view(), name='auditor_signup'),
 ]
 
 if settings.DEBUG:

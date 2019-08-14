@@ -28,6 +28,7 @@ DEBUG = False
 import dj_database_url
 
 ALLOWED_HOSTS = ['substantive.herokuapp.com', '.theshrota.com']
+APPEND_SLASH=False
 
 FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
                         "django_excel.TemporaryExcelFileUploadHandler")
@@ -45,30 +46,35 @@ SITE_ID = 1
 
 
 INSTALLED_APPS = [
-    'django.contrib.auth',
+ 'django.contrib.auth',
     'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sitemaps',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django_comments',
     'mptt',
     'tagging',
     'import_export',
-    'testing',
+    # 'testing',
     'crispy_forms',
     'widget_tweaks',
-    "djstripe",
-    "stripe",
-    "storages",
-    "zinnia",
+    # "djstripe",
+    # "stripe",
+    # "zinnia",
     'bootstrapform',
-    'survey',
+    # 'survey',
+    'procedures',
+    'compressor',
+    'django_tables2',
+   
+ 
     
 
 ]
+COMPRESS_ENABLED = True
 
 import stripe
 
@@ -176,16 +182,16 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 
 
-AUTH_USER_MODEL = 'testing.User'
+# AUTH_USER_MODEL = 'testing.User'
 
 
-LOGIN_URL = 'login'
+# LOGIN_URL = 'login'
 
-LOGOUT_URL = 'logout'
+# LOGOUT_URL = 'logout'
 
-LOGIN_REDIRECT_URL = 'home'
+# LOGIN_REDIRECT_URL = 'home'
 
-LOGOUT_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL = 'home'
 
 # Messages built-in framework
 

@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from .models import Question, samples, User
+from .models import Question, samples
 import django_filters
 
 class SampleFilter(django_filters.FilterSet):

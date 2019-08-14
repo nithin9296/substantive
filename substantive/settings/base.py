@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+APPEND_SLASH=False
+
 FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
                         "django_excel.TemporaryExcelFileUploadHandler")
 
@@ -57,18 +59,22 @@ INSTALLED_APPS = [
     'mptt',
     'tagging',
     'import_export',
-    'testing',
+    # 'testing',
     'crispy_forms',
     'widget_tweaks',
-    "djstripe",
-    "stripe",
-    "zinnia",
+    # "djstripe",
+    # "stripe",
+    # "zinnia",
     'bootstrapform',
-    'survey',
+    # 'survey',
+    'procedures',
+    'compressor',
+    'django_tables2',
    
  
 
 ]
+COMPRESS_ENABLED = True
 
 import stripe
 
@@ -175,16 +181,16 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 
 
-AUTH_USER_MODEL = 'testing.User'
+# AUTH_USER_MODEL = 'substantive.User'
 
 
-LOGIN_URL = 'login'
+# LOGIN_URL = 'login'
 
-LOGOUT_URL = 'logout'
+# LOGOUT_URL = 'logout'
 
-LOGIN_REDIRECT_URL = 'home'
+# LOGIN_REDIRECT_URL = 'home'
 
-LOGOUT_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL = 'home'
 
 # Messages built-in framework
 
@@ -200,6 +206,10 @@ LOGOUT_REDIRECT_URL = 'home'
 # Third party apps configuration
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.template.TemplateFilter',
+]
 
 
 # BRAINTREE_PRODUCTION = False  # We'll need this later to switch between the sandbox and live account

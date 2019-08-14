@@ -48,9 +48,9 @@ from django.db import models
 from django.utils.html import escape, mark_safe
 import stripe
 
-class User(AbstractUser):
-    is_client = models.BooleanField(default=False)
-    is_auditor = models.BooleanField(default=False)
+# class User(AbstractUser):
+#     is_client = models.BooleanField(default=False)
+#     is_auditor = models.BooleanField(default=False)
 
     
 
@@ -176,7 +176,7 @@ class samples(models.Model):
     # Area =  models.ForeignKey('area', on_delete=models.CASCADE)
     # Financial_Year = models.ForeignKey(Financial_Year, on_delete=models.CASCADE)
     # Client = models.ForeignKey('client', on_delete=models.CASCADE)
-    username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    # username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     allowed_memberships = models.ManyToManyField(Membership)
 
     def __str__(self):
@@ -192,7 +192,7 @@ from .signals import object_viewed_signal
 
 
 class ObjectViewed(models.Model):
-    User = models.OneToOneField(User, null=True,on_delete=models.CASCADE)
+    # User = models.OneToOneField(User, null=True,on_delete=models.CASCADE)
     content_type = models.ForeignKey(ContentType, on_delete=models.SET_NULL, null=True)
     object_id = models.PositiveIntegerField()
     ip_address = models.CharField(max_length=120, blank=True, null=True)

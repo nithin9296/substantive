@@ -1,0 +1,85 @@
+{% extends 'base2.html' %}
+
+{{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<main class="transaction-page">
+    <section class="inner-wrap">
+        {% include 'sidebar.html' %}
+        <div class="sampling_form">
+          <div class="modal-header" style="margin: 30px">
+              <h4 class="modal-title">Samples Selected</h4>
+          </div>
+          <table id='datatable' class="no-spacing">
+            <thead>
+              <tr>
+                  {% for th in IC_values.columns %}
+                    <th width="10%">{{ th }}</th>
+                  {% endfor %}
+              <tr>
+            </thead>
+            <tbody>
+              {% for index, row in IC_values.iterrows|slice:":1" %}
+              <tr class="ic_row">
+                {% for td in row %}
+                  <td>{{ td }}</td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <form>
+              <div class="form-actions">
+                  <a class="general_btn" id="startTestingBtn" style="text-align:center" href="#">Start Testing
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </a>
+              </div>
+          </form>
+        </div>
+    </section>
+</main>
+
+
+
+
+{% block javascript %}
+<script>
+    $(function() {
+      /*
+      $('#datatable')({
+        striped: true,
+        pagination: true,
+        showColumns: true,
+        showToggle: true,
+        showExport: true,
+        sortable: true,
+        paginationVAlign: 'both',
+        pageSize: 25,
+        pageList: [10, 25, 50, 100, 'ALL'],
+        columns: {{ IC_values.columns|safe }},  // here is where we use the column content from our Django View
+        data: {{ IC_values.data|safe }}, // here is where we use the data content from our Django View. we escape the content with the safe tag so the raw JSON isn't shown.
+      });
+      */
+      var url = "{% url 'TOC_update' id=object_list.id %}";
+      //$("#startTestingBtn").addClass('btn-disabled');
+      $("#startTestingBtn").on('click', function () {
+        //if(!$(this).hasClass('btn-disabled'))
+          document.location.href = url;
+      });
+      $("#datatable > tbody > tr").on('click', function () {
+        //$("#startTestingBtn").removeClass('btn-disabled');
+        //var id = $(this).children('td:first').text();
+        //$("tr").removeClass('selected');
+        //$(this).addClass('selected');
+      })
+    });
+</script>
+{% endblock %}
+
+
+{% endblock content %}

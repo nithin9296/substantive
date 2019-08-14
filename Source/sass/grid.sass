@@ -1,0 +1,1064 @@
+@import 'components/font'
+
+@import 'components/setting'
+
+/*General styles*/
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	margin: 0	
+	padding: 0
+
+html, body
+	min-width: 320px 
+	font-family: $global-font
+	color: $f-color
+	font-size: $min-font-size
+	position: relative
+	@media screen and (min-width: #{$dw-640})
+		font-size: $font-size
+	
+h1,h2,h3,h4,h5,h6,p,a,i,em,strong
+	font-style: normal 
+	text-decoration: none
+	font-weight: normal
+	color: inherit   
+	padding: 0
+	margin: 0
+h1
+	font-size: $h1-min-size
+	margin: $margin-h1 
+	@media screen and (min-width: #{$dw-h-size})
+		font-size: $h1-size
+h2
+	font-size: $h2-min-size
+	@media screen and (min-width: #{$dw-h-size})
+		font-size: $h2-size
+h3
+	font-size: $h3-size
+h4
+	font-size: $h4-size
+h5
+	font-size: $h5-size
+h6
+	font-size: $h6-size
+a
+	cursor: pointer
+	-webkit-transition: all 0.3s ease 
+	-moz-transition: all 0.3s ease 
+	-ms-transition: all 0.3s ease 
+	-o-transition: all 0.3s ease 
+	transition: all 0.3s ease 
+
+ul
+	list-style: none 
+
+img
+	width: 100%
+	height: auto
+
+input, textarea, button
+	outline: none
+	font-family: $global-font
+	border: none
+
+input::-webkit-input-placeholder, input::-moz-placeholder, input:-moz-placeholder, input:-ms-input-placeholder 
+	color: $input-color
+
+
+textarea::-webkit-input-placeholder, textarea::-moz-placeholder, textarea:-moz-placeholder, textarea:-ms-input-placeholder 
+	font-family: $global-font
+
+	
+/*container-block*/
+.container-wrap
+	margin: $min-container-wrapper-margin
+	padding: $min-container-wrapper-padding
+	@media screen and (min-width: #{$dw-width-section})
+		margin: $container-wrapper-margin
+		padding: $container-wrapper-padding
+		
+/*wrapper*/
+.wrapper
+	max-width: $wrap-size
+	margin: 0 auto
+	text-align: $text-align-wrapper 
+	padding: $wrap-pading
+
+/*container*/
+.container
+	width: 100%
+	margin: 0 auto
+	padding: $container-pading
+	@media screen and (min-width: #{$dw-640})
+		max-width: $display-width
+		padding: $container-max-pading
+
+/*section-block*/
+.section-wrap
+	margin: $min-margin-section-block
+	padding: $min-padding-section-block
+	@media screen and (min-width: #{$dw-width-section})
+		margin: $margin-section-block 
+		padding: $padding-section-block
+
+/*navbar*/
+.navbar
+	font-family: $font-nav
+	&_list
+		li
+			margin: $margin-nav-min-offest
+			@media screen and (min-width: #{$dw-width-nav-toggle})
+				margin: $margin-nav-offest	
+			a
+				font-size: $nav-size
+/*navbar*/	
+
+/*navigation icon*/
+.nav-icon
+	display: block
+	@media screen and (min-width: #{$dw-width-nav-toggle})
+		display: none
+	&_box
+		margin: 0px
+		cursor: pointer
+		display: block
+		width: 42px
+		height: 39px
+		position: relative
+		-webkit-transition: all 0.35s ease 
+		-moz-transition: all 0.35s ease 
+		-ms-transition: all 0.35s ease 
+		-o-transition: all 0.35s ease 
+		transition: all 0.35s ease
+	&_line
+		width: 80%
+		-webkit-border-radius: 16px 
+		border-radius: 16px 
+		display: block
+		height: $nav-line-height
+		background: $nav-toggle-background
+		position: absolute
+		left: 3px
+		top: 0
+		-webkit-transition: background 0.3s, opacity 0.35s 0.2s, top 0.2s 0.4s, transform 0.2s 0.2s ease 
+		-moz-transition: background 0.3s, opacity 0.35s 0.2s, top 0.2s 0.4s, transform 0.2s 0.2s ease 
+		-ms-transition: background 0.3s, opacity 0.35s 0.2s, top 0.2s 0.4s, transform 0.2s 0.2s ease 
+		-o-transition: background 0.3s, opacity 0.35s 0.2s, top 0.2s 0.4s, transform 0.2s 0.2s ease 
+		transition: background 0.3s, opacity 0.35s 0.2s, top 0.2s 0.4s, transform 0.2s 0.2s ease 
+		&:nth-child(1)
+			top: 5px
+		&:nth-child(2)
+			top: 17px
+		&:nth-child(3)
+			top: 29px
+	&.active
+		.nav-icon_line
+			-webkit-transition: background 0.3s, opacity 0.35s 0.4s, top 0.2s 0.2s, transform 0.3s 0.4s ease 
+			-moz-transition: background 0.3s, opacity 0.35s 0.4s, top 0.2s 0.2s, transform 0.3s 0.4s ease 
+			-ms-transition: background 0.3s, opacity 0.35s 0.4s, top 0.2s 0.2s, transform 0.3s 0.4s ease 
+			-o-transition: background 0.3s, opacity 0.35s 0.4s, top 0.2s 0.2s, transform 0.3s 0.4s ease 
+			transition: background 0.3s, opacity 0.35s 0.4s, top 0.2s 0.2s, transform 0.3s 0.4s ease 
+			background: $nav-toggle-background
+			&:nth-child(1)
+				top: 12px
+				-webkit-transform: rotate(45deg) 
+				-moz-transform: rotate(45deg) 
+				-ms-transform: rotate(45deg) 
+				-o-transform: rotate(45deg) 
+				transform: rotate(45deg) 
+			&:nth-child(2)
+				opacity: 0 
+			&:nth-child(3)
+				top: 12px
+				-webkit-transform: rotate(-45deg) 
+				-moz-transform: rotate(-45deg) 
+				-ms-transform: rotate(-45deg) 
+				-o-transform: rotate(-45deg) 
+				transform: rotate(-45deg)
+	
+/*end navigation icon*/
+
+/*start btn up*/
+.btn-up
+	display: block
+	background: $btn-up-backgound
+	border-radius: 90%
+	position: fixed
+	width: 50px
+	height: 50px
+	z-index: 1000
+	right: 10px
+	bottom: -50px
+	cursor: pointer
+	outline: 0!important
+	transition: 0.4s
+	opacity: 0.6
+	&:after
+		content: ''
+		width: 10px
+		height: 10px
+		border-top: 2px solid #fff
+		border-left: 2px solid #fff
+		-webkit-transform: rotate(45deg) 
+		-moz-transform: rotate(45deg) 
+		-ms-transform: rotate(45deg) 
+		-o-transform: rotate(45deg) 
+		transform: rotate(45deg) 
+		position: absolute
+		top: 4px
+		bottom: 0
+		left: 0
+		right: 0
+		margin: auto
+
+.btn-up.active
+	bottom: 10px
+/*end btn up*/
+
+/*flex-blocks grid layout*/	
+.flex
+	display: flex
+	-webkit-flex-wrap: wrap
+	-ms-flex-wrap: wrap
+	flex-wrap: wrap
+
+.flex-column
+	-webkit-flex-direction: column 
+	-ms-flex-direction: column 
+	flex-direction: column 
+
+.flex-row-reverse
+	-webkit-flex-direction: row-reverse
+	-ms-flex-direction: row-reverse
+	flex-direction: row-reverse
+	
+.flex-column-reverse
+	-webkit-flex-direction: column-reverse
+	-ms-flex-direction: column-reverse
+	flex-direction: column-reverse
+
+.flex-sa
+	-webkit-justify-content: space-around
+	justify-content: space-around
+	
+.flex-sb
+	-webkit-justify-content: space-between
+	justify-content: space-between
+	
+.flex-center
+	-webkit-justify-content: center 
+	justify-content: center
+
+.flex-start
+	-webkit-justify-content: flex-start 
+	justify-content: flex-start 
+
+.flex-end
+	-webkit-justify-content: flex-end 
+	justify-content: flex-end 
+
+.flex-vertical-top
+	-webkit-align-items: flex-start 
+	align-items: flex-start 
+
+.flex-vertical-center
+	-webkit-align-items: center 
+	align-items: center 
+
+.flex-vertical-bottom
+	-webkit-align-items: flex-end 
+	align-items: flex-end 
+	
+.flex-vertical-stretch
+	-webkit-align-items: stretch
+	align-items: stretch
+
+.item-start
+	-webkit-align-self: flex-start 
+	align-self: flex-start 	
+	
+.item-center
+	-webkit-align-self: center 
+	align-self: center 
+	
+.item-end
+	-webkit-align-self: flex-end 
+	align-self: flex-end 
+/*flex-block small device*/
+
+.flex-sd-column
+	@media screen and (min-width: #{$dw-480})
+		-webkit-flex-direction: column 
+		-ms-flex-direction: column 
+		flex-direction: column
+	    
+.flex-sd-row
+	@media screen and (min-width: #{$dw-480})
+		-webkit-flex-direction: row
+		-ms-flex-direction: row
+		flex-direction: row
+
+.flex-sd-row-reverse
+	@media screen and (min-width: #{$dw-480})
+		-webkit-flex-direction: row-reverse
+		-ms-flex-direction: row-reverse
+		flex-direction: row-reverse
+	
+.flex-sd-column-reverse
+	@media screen and (min-width: #{$dw-480})
+		-webkit-flex-direction: column-reverse
+		-ms-flex-direction: column-reverse
+		flex-direction: column-reverse
+
+.flex-sd-sa
+	@media screen and (min-width: #{$dw-480})
+		-webkit-justify-content: space-around
+		justify-content: space-around
+	 
+.flex-sd-sb
+	@media screen and (min-width: #{$dw-480})
+		-webkit-justify-content: space-between
+		justify-content: space-between
+	    
+.flex-sd-center
+	@media screen and (min-width: #{$dw-480})
+		-webkit-justify-content: center
+		justify-content: center
+	    
+.flex-sd-start
+	@media screen and (min-width: #{$dw-480})
+		-webkit-justify-content: flex-start 
+		justify-content: flex-start 
+
+.flex-sd-end
+	@media screen and (min-width: #{$dw-480})
+		-webkit-justify-content: flex-end 
+		justify-content: flex-end 
+
+.flex-sd-vertical-top
+	@media screen and (min-width: #{$dw-480})
+		-webkit-align-items: flex-start 
+		align-items: flex-start
+	    	    
+.flex-sd-vertical-center
+	@media screen and (min-width: #{$dw-480})
+		-webkit-align-items: center 
+		align-items: center
+	  
+.flex-sd-vertical-bottom
+	@media screen and (min-width: #{$dw-480})
+		-webkit-align-items: flex-end 
+		align-items: flex-end 
+
+.flex-sd-vertical-stretch
+	@media screen and (min-width: #{$dw-480})
+		-webkit-align-items: stretch
+		align-items: stretch
+	   
+.item-sd-start
+	@media screen and (min-width: #{$dw-480})
+		-webkit-align-self: flex-start 
+		align-self: flex-start 	
+	
+.item-sd-center
+	@media screen and (min-width: #{$dw-480})
+		-webkit-align-self: center
+		align-self: center
+	
+.item-sd-end
+	@media screen and (min-width: #{$dw-480})
+		-webkit-align-self: flex-end 
+		align-self: flex-end 	
+	    
+/*flex-block middle device*/
+
+.flex-md-column
+	@media screen and (min-width: #{$dw-640})
+		-webkit-flex-direction: column 
+		-ms-flex-direction: column 
+		flex-direction: column
+	    
+.flex-md-row
+	@media screen and (min-width: #{$dw-640})
+		-webkit-flex-direction: row
+		-ms-flex-direction: row
+		flex-direction: row
+
+.flex-md-row-reverse
+	@media screen and (min-width: #{$dw-640})
+		-webkit-flex-direction: row-reverse
+		-ms-flex-direction: row-reverse
+		flex-direction: row-reverse
+	
+.flex-md-column-reverse
+	@media screen and (min-width: #{$dw-640})
+		-webkit-flex-direction: column-reverse
+		-ms-flex-direction: column-reverse
+		flex-direction: column-reverse
+
+.flex-md-sa
+	@media screen and (min-width: #{$dw-640})
+		-webkit-justify-content: space-around
+		justify-content: space-around
+	 
+.flex-md-sb
+	@media screen and (min-width: #{$dw-640})
+		-webkit-justify-content: space-between
+		justify-content: space-between
+	    
+.flex-md-center
+	@media screen and (min-width: #{$dw-640})
+		-webkit-justify-content: center
+		justify-content: center
+	    
+.flex-md-start
+	@media screen and (min-width: #{$dw-640})
+		-webkit-justify-content: flex-start 
+		justify-content: flex-start 
+
+.flex-md-end
+	@media screen and (min-width: #{$dw-640})
+		-webkit-justify-content: flex-end 
+		justify-content: flex-end 
+
+.flex-md-vertical-top
+	@media screen and (min-width: #{$dw-640})
+		-webkit-align-items: flex-start 
+		align-items: flex-start
+	    	    
+.flex-md-vertical-center
+	@media screen and (min-width: #{$dw-640})
+		-webkit-align-items: center 
+		align-items: center
+	  
+.flex-md-vertical-bottom
+	@media screen and (min-width: #{$dw-640})
+		-webkit-align-items: flex-end 
+		align-items: flex-end 
+
+.flex-md-vertical-stretch
+	@media screen and (min-width: #{$dw-640})
+		-webkit-align-items: stretch
+		align-items: stretch
+	    
+.item-md-start
+	@media screen and (min-width: #{$dw-640})
+		-webkit-align-self: flex-start 
+		align-self: flex-start 	
+	
+.item-md-center
+	@media screen and (min-width: #{$dw-640})
+		-webkit-align-self: center
+		align-self: center
+	
+.item-md-end
+	@media screen and (min-width: #{$dw-640})
+		-webkit-align-self: flex-end 
+		align-self: flex-end 
+	    
+/*flex-block semi middle device*/
+
+.flex-smd-column
+	@media screen and (min-width: #{$dw-780})
+		-webkit-flex-direction: column 
+		-ms-flex-direction: column 
+		flex-direction: column
+	    
+.flex-smd-row
+	@media screen and (min-width: #{$dw-780})
+		-webkit-flex-direction: row
+		-ms-flex-direction: row
+		flex-direction: row
+
+.flex-smd-row-reverse
+	@media screen and (min-width: #{$dw-780})
+		-webkit-flex-direction: row-reverse
+		-ms-flex-direction: row-reverse
+		flex-direction: row-reverse
+	
+.flex-smd-column-reverse
+	@media screen and (min-width: #{$dw-780})
+		-webkit-flex-direction: column-reverse
+		-ms-flex-direction: column-reverse
+		flex-direction: column-reverse
+
+.flex-smd-sa
+	@media screen and (min-width: #{$dw-780})
+		-webkit-justify-content: space-around
+		justify-content: space-around
+	 
+.flex-smd-sb
+	@media screen and (min-width: #{$dw-780})
+		-webkit-justify-content: space-between
+		justify-content: space-between
+	    
+.flex-smd-center
+	@media screen and (min-width: #{$dw-780})
+		-webkit-justify-content: center
+		justify-content: center
+
+.flex-smd-start
+	@media screen and (min-width: #{$dw-780})
+		-webkit-justify-content: flex-start 
+		justify-content: flex-start 
+
+.flex-smd-end
+	@media screen and (min-width: #{$dw-780})
+		-webkit-justify-content: flex-end 
+		justify-content: flex-end 
+
+.flex-smd-vertical-top
+	@media screen and (min-width: #{$dw-780})
+		-webkit-align-items: flex-start 
+		align-items: flex-start
+	 
+.flex-smd-vertical-center
+	@media screen and (min-width: #{$dw-780})
+		-webkit-align-items: center 
+		align-items: center 
+	   
+.flex-smd-vertical-bottom
+	@media screen and (min-width: #{$dw-780})
+		-webkit-align-items: flex-end 
+		align-items: flex-end 
+	   
+.flex-smd-vertical-stretch
+	@media screen and (min-width: #{$dw-780})
+		-webkit-align-items: stretch
+		align-items: stretch
+	    
+.item-smd-start
+	@media screen and (min-width: #{$dw-780})
+		-webkit-align-self: flex-start 
+		align-self: flex-start 	
+	
+.item-smd-center
+	@media screen and (min-width: #{$dw-780})
+		-webkit-align-self: center
+		align-self: center 	
+	
+.item-smd-end
+	@media screen and (min-width: #{$dw-780})
+		-webkit-align-self: flex-end 
+		align-self: flex-end 
+	
+/*flex-block large device*/
+
+.flex-ld-column
+	@media screen and (min-width: #{$dw-960})
+		-webkit-flex-direction: column 
+		-ms-flex-direction: column 
+		flex-direction: column
+	    
+.flex-ld-row
+	@media screen and (min-width: #{$dw-960})
+		-webkit-flex-direction: row
+		-ms-flex-direction: row
+		flex-direction: row
+
+.flex-ld-row-reverse
+	@media screen and (min-width: #{$dw-960})
+		-webkit-flex-direction: row-reverse
+		-ms-flex-direction: row-reverse
+		flex-direction: row-reverse
+	
+.flex-ld-column-reverse
+	@media screen and (min-width: #{$dw-960})
+		-webkit-flex-direction: column-reverse
+		-ms-flex-direction: column-reverse
+		flex-direction: column-reverse
+
+.flex-ld-sa
+	@media screen and (min-width: #{$dw-960})
+		-webkit-justify-content: space-around
+		justify-content: space-around
+	 
+.flex-ld-sb
+	@media screen and (min-width: #{$dw-960})
+		-webkit-justify-content: space-between
+		justify-content: space-between
+	    
+.flex-ld-center
+	@media screen and (min-width: #{$dw-960})
+		-webkit-justify-content: center
+		justify-content: center
+	   
+.flex-ld-start
+	@media screen and (min-width: #{$dw-960})
+		-webkit-justify-content: flex-start 
+		justify-content: flex-start 
+
+.flex-ld-end
+	@media screen and (min-width: #{$dw-960})
+		-webkit-justify-content: flex-end 
+		justify-content: flex-end 
+	   
+.flex-ld-vertical-top
+	@media screen and (min-width: #{$dw-960})
+		-webkit-align-items: flex-start 
+		align-items: flex-start
+	    
+.flex-ld-vertical-center
+	@media screen and (min-width: #{$dw-960})
+		-webkit-align-items: center 
+		align-items: center 
+	  
+.flex-ld-vertical-bottom
+	@media screen and (min-width: #{$dw-960})
+		-webkit-align-items: flex-end 
+		align-items: flex-end 
+
+.flex-ld-vertical-stretch
+	@media screen and (min-width: #{$dw-960})
+		-webkit-align-items: stretch
+		align-items: stretch
+	   
+.item-ld-start
+	@media screen and (min-width: #{$dw-960})
+		-webkit-align-self: flex-start 
+		align-self: flex-start 	
+	
+.item-ld-center
+	@media screen and (min-width: #{$dw-960})
+		-webkit-align-self: center
+		align-self: center
+	
+.item-ld-end
+	@media screen and (min-width: #{$dw-960})
+		-webkit-align-self: flex-end 
+		align-self: flex-end 
+	    
+/*flex-block extra large device*/
+
+.flex-xld-column
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-flex-direction: column 
+		-ms-flex-direction: column 
+		flex-direction: column
+	    
+.flex-xld-row
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-flex-direction: row
+		-ms-flex-direction: row
+		flex-direction: row
+
+.flex-xld-row-reverse
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-flex-direction: row-reverse
+		-ms-flex-direction: row-reverse
+		flex-direction: row-reverse
+	
+.flex-xld-column-reverse
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-flex-direction: column-reverse
+		-ms-flex-direction: column-reverse
+		flex-direction: column-reverse
+
+.flex-xld-sa
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-justify-content: space-around
+		justify-content: space-around
+	 
+.flex-xld-sb
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-justify-content: space-between
+		justify-content: space-between
+	    
+.flex-xld-center
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-justify-content: center
+		justify-content: center
+	    
+.flex-xld-start
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-justify-content: flex-start 
+		justify-content: flex-start 
+
+.flex-xld-end
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-justify-content: flex-end 
+		justify-content: flex-end 
+	   
+.flex-xld-vertical-top
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-align-items: flex-start 
+		align-items: flex-start
+	   
+.flex-xld-vertical-center
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-align-items: center 
+		align-items: center
+
+.flex-xld-vertical-bottom
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-align-items: flex-end 
+		align-items: flex-end 
+
+.flex-xld-vertical-stretch
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-align-items: stretch
+		align-items: stretch
+	    
+.item-xld-start
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-align-self: flex-start 
+		align-self: flex-start 	
+	
+.item-xld-center
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-align-self: center
+		align-self: center
+	
+.item-xld-end
+	@media screen and (min-width: #{$dw-1100})
+		-webkit-align-self: flex-end 
+		align-self: flex-end    
+/*grid layout with width*/
+
+.col-1
+	+col($col-1, $offset-0)
+.col-2
+	+col($col-2, $offset-0)
+.col-2-5
+	+col($col-2-5, $offset-0)
+.col-3
+	+col($col-3, $offset-0)	
+.col-4
+	+col($col-4, $offset-0)
+.col-5
+	+col($col-5, $offset-0)	
+.col-6
+	+col($col-6, $offset-0)	
+.col-7
+	+col($col-7, $offset-0)
+.col-8
+	+col($col-8, $offset-0)
+.col-9
+	+col($col-9, $offset-0)	
+.col-10
+	+col($col-10, $offset-0)	
+.col-11
+	+col($col-11, $offset-0)	
+.col-12
+	+col($col-12, $offset-0)
+
+/*grid layout middle device*/
+
+.col-sd-1
+	+device-col($dw-480, $col-1, $offset)
+.col-sd-2
+	+device-col($dw-480, $col-2, $offset)
+.col-sd-2-5
+	+device-col($dw-480, $col-2-5, $offset)
+.col-sd-3
+	+device-col($dw-480, $col-3, $offset)
+.col-sd-4
+	+device-col($dw-480, $col-4, $offset)
+.col-sd-5
+	+device-col($dw-480, $col-5, $offset)
+.col-sd-6
+	+device-col($dw-480, $col-6, $offset)
+.col-sd-7
+	+device-col($dw-480, $col-7, $offset)
+.col-sd-8
+	+device-col($dw-480, $col-8, $offset)
+.col-sd-9
+	+device-col($dw-480, $col-9, $offset)
+.col-sd-10
+	+device-col($dw-480, $col-10, $offset)
+.col-sd-11
+	+device-col($dw-480, $col-11, $offset)
+.col-sd-12
+	+device-col($dw-480, $col-12, $offset)
+	
+/*grid layout middle device*/
+
+.col-md-1
+	+device-col($dw-640, $col-1, $offset)
+.col-md-2
+	+device-col($dw-640, $col-2, $offset)
+.col-md-2-5
+	+device-col($dw-640, $col-2-5, $offset)
+.col-md-3
+	+device-col($dw-640, $col-3, $offset)
+.col-md-4
+	+device-col($dw-640, $col-4, $offset)
+.col-md-5
+	+device-col($dw-640, $col-5, $offset)
+.col-md-6
+	+device-col($dw-640, $col-6, $offset)
+.col-md-7
+	+device-col($dw-640, $col-7, $offset)
+.col-md-8
+	+device-col($dw-640, $col-8, $offset)
+.col-md-9
+	+device-col($dw-640, $col-9, $offset)
+.col-md-10
+	+device-col($dw-640, $col-10, $offset)
+.col-md-11
+	+device-col($dw-640, $col-11, $offset)
+.col-md-12
+	+device-col($dw-640, $col-12, $offset)
+
+
+/*grid layout semimiddle device*/
+
+.col-smd-1
+	+device-col($dw-780, $col-1, $offset)
+.col-smd-2
+	+device-col($dw-780, $col-2, $offset)
+.col-smd-2-5
+	+device-col($dw-780, $col-2-5, $offset)
+.col-smd-3
+	+device-col($dw-780, $col-3, $offset)
+.col-smd-4
+	+device-col($dw-780, $col-4, $offset)
+.col-smd-5
+	+device-col($dw-780, $col-5, $offset)
+.col-smd-6
+	+device-col($dw-780, $col-6, $offset)
+.col-smd-7
+	+device-col($dw-780, $col-7, $offset)
+.col-smd-8
+	+device-col($dw-780, $col-8, $offset)
+.col-smd-9
+	+device-col($dw-780, $col-9, $offset)
+.col-smd-10
+	+device-col($dw-780, $col-10, $offset)
+.col-smd-11
+	+device-col($dw-780, $col-11, $offset)
+.col-smd-12
+	+device-col($dw-780, $col-12, $offset)
+/*grid layout large device*/
+
+.col-ld-1
+	+device-col($dw-960, $col-1, $offset)
+.col-ld-2
+	+device-col($dw-960, $col-2, $offset)
+.col-ld-2-5
+	+device-col($dw-960, $col-2-5, $offset)
+.col-ld-3
+	+device-col($dw-960, $col-3, $offset)
+.col-ld-4
+	+device-col($dw-960, $col-4, $offset)
+.col-ld-5
+	+device-col($dw-960, $col-5, $offset)
+.col-ld-6
+	+device-col($dw-960, $col-6, $offset)
+.col-ld-7
+	+device-col($dw-960, $col-7, $offset)
+.col-ld-8
+	+device-col($dw-960, $col-8, $offset)
+.col-ld-9
+	+device-col($dw-960, $col-9, $offset)
+.col-ld-10
+	+device-col($dw-960, $col-10, $offset)
+.col-ld-11
+	+device-col($dw-960, $col-11, $offset)
+.col-ld-12
+	+device-col($dw-960, $col-12, $offset)
+
+/*grid layout extra large device*/
+
+.col-xld-1
+	+device-col($dw-1100, $col-1, $offset)
+.col-xld-2
+	+device-col($dw-1100, $col-2, $offset)
+.col-xld-2-5
+	+device-col($dw-1100, $col-2-5, $offset)
+.col-xld-3
+	+device-col($dw-1100, $col-3, $offset)
+.col-xld-4
+	+device-col($dw-1100, $col-4, $offset)
+.col-xld-5
+	+device-col($dw-1100, $col-5, $offset)
+.col-xld-6
+	+device-col($dw-1100, $col-6, $offset)
+.col-xld-7
+	+device-col($dw-1100, $col-7, $offset)
+.col-xld-8
+	+device-col($dw-1100, $col-8, $offset)
+.col-xld-9
+	+device-col($dw-1100, $col-9, $offset)
+.col-xld-10
+	+device-col($dw-1100, $col-10, $offset)
+.col-xld-11
+	+device-col($dw-1100, $col-11, $offset)
+.col-xld-12
+	+device-col($dw-1100, $col-12, $offset)
+	
+/*grid layout with flex*/
+
+.grid-1
+	+grid($col-1, $offset-0)
+.grid-2
+	+grid($col-2, $offset-0)
+.grid-2-5
+	+grid($col-2-5, $offset-0)
+.grid-3
+	+grid($col-3, $offset-0)
+.grid-4
+	+grid($col-4, $offset-0)
+.grid-5
+	+grid($col-5, $offset-0)
+.grid-6
+	+grid($col-6, $offset-0)
+.grid-7
+	+grid($col-7, $offset-0)
+.grid-8
+	+grid($col-8, $offset-0)
+.grid-9
+	+grid($col-9, $offset-0)
+.grid-10
+	+grid($col-10, $offset-0)
+.grid-12
+	+grid($col-11, $offset-0)
+.grid-12
+	+grid($col-12, $offset-0)
+
+/*grid layout small device*/
+
+.grid-sd-1
+	+device-grid($dw-480, $col-1, $offset)
+.grid-sd-2
+	+device-grid($dw-480, $col-2, $offset)
+.grid-sd-2-5
+	+device-grid($dw-480, $col-2-5, $offset)
+.grid-sd-3
+	+device-grid($dw-480, $col-3, $offset)
+.grid-sd-4
+	+device-grid($dw-480, $col-4, $offset)
+.grid-sd-5
+	+device-grid($dw-480, $col-5, $offset)
+.grid-sd-6
+	+device-grid($dw-480, $col-6, $offset)
+.grid-sd-7
+	+device-grid($dw-480, $col-7, $offset)
+.grid-sd-8
+	+device-grid($dw-480, $col-8, $offset)
+.grid-sd-9
+	+device-grid($dw-480, $col-9, $offset)
+.grid-sd-10
+	+device-grid($dw-480, $col-10, $offset)
+.grid-sd-11
+	+device-grid($dw-480, $col-11, $offset)
+.grid-md-12
+	+device-grid($dw-640, $col-12, $offset)
+	
+/*grid layout middle device*/
+
+.grid-md-1
+	+device-grid($dw-640, $col-1, $offset)
+.grid-md-2
+	+device-grid($dw-640, $col-2, $offset)
+.grid-md-2-5
+	+device-grid($dw-640, $col-2-5, $offset)
+.grid-md-3
+	+device-grid($dw-640, $col-3, $offset)
+.grid-md-4
+	+device-grid($dw-640, $col-4, $offset)
+.grid-md-5
+	+device-grid($dw-640, $col-5, $offset)
+.grid-md-6
+	+device-grid($dw-640, $col-6, $offset)
+.grid-md-7
+	+device-grid($dw-640, $col-7, $offset)
+.grid-md-8
+	+device-grid($dw-640, $col-8, $offset)
+.grid-md-9
+	+device-grid($dw-640, $col-9, $offset)
+.grid-md-10
+	+device-grid($dw-640, $col-10, $offset)
+.grid-md-11
+	+device-grid($dw-640, $col-11, $offset)
+.grid-md-12
+	+device-grid($dw-640, $col-12, $offset)
+	
+/*grid layout semi middle device*/
+
+.grid-smd-1
+	+device-grid($dw-780, $col-1, $offset)
+.grid-smd-2
+	+device-grid($dw-780, $col-2, $offset)
+.grid-smd-2-5
+	+device-grid($dw-780, $col-2-5, $offset)
+.grid-smd-3
+	+device-grid($dw-780, $col-3, $offset)
+.grid-smd-4
+	+device-grid($dw-780, $col-4, $offset)
+.grid-smd-5
+	+device-grid($dw-780, $col-5, $offset)
+.grid-smd-6
+	+device-grid($dw-780, $col-6, $offset)
+.grid-smd-7
+	+device-grid($dw-780, $col-7, $offset)
+.grid-smd-8
+	+device-grid($dw-780, $col-8, $offset)
+.grid-smd-9
+	+device-grid($dw-780, $col-9, $offset)
+.grid-msd-10
+	+device-grid($dw-780, $col-10, $offset)
+.grid-msd-11
+	+device-grid($dw-780, $col-11, $offset)
+.grid-msd-12
+	+device-grid($dw-780, $col-12, $offset)
+
+/*grid layout large device*/
+
+.grid-ld-1
+	+device-grid($dw-960, $col-1, $offset)
+.grid-ld-2
+	+device-grid($dw-960, $col-2, $offset)
+.grid-ld-2-5
+	+device-grid($dw-960, $col-2-5, $offset)
+.grid-ld-3
+	+device-grid($dw-960, $col-3, $offset)
+.grid-ld-4
+	+device-grid($dw-960, $col-4, $offset)
+.grid-ld-5
+	+device-grid($dw-960, $col-5, $offset)
+.grid-ld-6
+	+device-grid($dw-960, $col-6, $offset)
+.grid-ld-7
+	+device-grid($dw-960, $col-7, $offset)
+.grid-ld-8
+	+device-grid($dw-960, $col-8, $offset)
+.grid-ld-9
+	+device-grid($dw-960, $col-9, $offset)
+.grid-ld-10
+	+device-grid($dw-960, $col-10, $offset)
+.grid-ld-11
+	+device-grid($dw-960, $col-11, $offset)
+.grid-ld-12
+	+device-grid($dw-960, $col-12, $offset)
+	
+/*grid layout extra large device*/
+
+.grid-xld-1
+	+device-grid($dw-1100, $col-1, $offset)
+.grid-xld-2
+	+device-grid($dw-1100, $col-2, $offset)
+.grid-xld-2-5
+	+device-grid($dw-1100, $col-2-5, $offset)
+.grid-xld-3
+	+device-grid($dw-1100, $col-3, $offset)
+.grid-xld-4
+	+device-grid($dw-1100, $col-4, $offset)
+.grid-xld-5
+	+device-grid($dw-1100, $col-5, $offset)
+.grid-xld-6
+	+device-grid($dw-1100, $col-6, $offset)
+.grid-xld-7
+	+device-grid($dw-1100, $col-7, $offset)
+.grid-xld-8
+	+device-grid($dw-1100, $col-8, $offset)
+.grid-xld-9
+	+device-grid($dw-1100, $col-9, $offset)
+.grid-xld-10
+	+device-grid($dw-1100, $col-10, $offset)
+.grid-xld-11
+	+device-grid($dw-1100, $col-11, $offset)
+.grid-xld-12
+	+device-grid($dw-1100, $col-12, $offset)
