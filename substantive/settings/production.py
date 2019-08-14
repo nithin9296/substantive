@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '(ssx)+*u-wqmn+64@byd!tv)(lf^lzn0mn4@k
 DEBUG = False
 import dj_database_url
 
-ALLOWED_HOSTS = ['substantive.herokuapp.com', '.theshrota.com']
+ALLOWED_HOSTS = ['yellow919.herokuapp.com', '.theshrota.com']
 APPEND_SLASH=False
 
 FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
@@ -69,7 +69,7 @@ INSTALLED_APPS = [
     'procedures',
     'compressor',
     'django_tables2',
-   
+
  
     
 
