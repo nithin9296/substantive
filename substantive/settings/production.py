@@ -33,13 +33,7 @@ APPEND_SLASH=False
 FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
                         "django_excel.TemporaryExcelFileUploadHandler")
 
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'shrotaapp@gmail.com'
-EMAIL_HOST_USER = 'nithin9196'
-EMAIL_HOST_PASSWORD = 'motorokr240377'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
+
 
 # Application definition
 SITE_ID = 1
@@ -76,9 +70,6 @@ INSTALLED_APPS = [
 ]
 COMPRESS_ENABLED = True
 
-import stripe
-
-STRIPE_SECRET_KEY = "sk_test_abo093CcGpqup3enkiscI3wq"
 
 
 MIDDLEWARE = [
